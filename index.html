@@ -1,0 +1,308 @@
+<html>
+<head>
+<style>
+html, body {
+  height: 100%;
+}
+
+html {
+background-image:url('https://images.squarespace-cdn.com/content/5967df4e59cc68de46478adb/1500216881661-7A9CWLQ3K97PGJ69H56V/?format=1000w&content-type=image%2Fjpeg');
+background-size: cover
+    }
+</style>
+<body>
+<html>
+</body>
+<h1> AV-CODER</h1>
+<h2> AV-CODER is created by "VAMSHI"</h2>
+<P1>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.[2]
+
+CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts.[3] This separation can improve content accessibility, provide more flexibility and control in the specification of presentation characteristics, enable multiple web pages to share formatting by specifying the relevant CSS in a separate .css file which reduces complexity and repetition in the structural content as well as enabling the .css file to be cached to improve the page load speed between the pages that share the file and its formatting.
+
+Separation of formatting and content also makes it feasible to present the same markup page in different styles for different rendering methods, such as on-screen, in print, by voice (via speech-based browser or screen reader), and on Braille-based tactile devices. CSS also has rules for alternate formatting if the content is accessed on a mobile device.[4]
+
+The name cascading comes from the specified priority scheme to determine which style rule applies if more than one rule matches a particular element. This cascading priority scheme is predictable.
+
+The CSS specifications are maintained by the World Wide Web Consortium (W3C). Internet media type (MIME type) text/css is registered for use with CSS by RFC 2318 (March 1998). The W3C operates a free CSS validation service for CSS documents.[5]
+
+In addition to HTML, other markup languages support the use of CSS including XHTML, plain XML, SVG, and XUL.</P1>
+<p2>Contents
+1	Syntax
+1.1	Selector
+1.2	Declaration block
+1.2.1	Length units
+1.3	Use
+1.4	Sources
+1.5	Specificity
+1.5.1	Examples
+1.6	Inheritance
+1.6.1	Example
+1.7	Whitespace
+1.8	Positioning
+1.8.1	Position property
+1.8.2	Float and clear
+2	History
+2.1	Difficulty with adoption
+2.2	Variations
+2.2.1	CSS 1
+2.2.2	CSS 2
+2.2.3	CSS 2.1
+2.2.4	CSS 3
+2.2.5	CSS 4
+3	Browser support
+4	Limitations
+4.1	Former issues
+5	Advantages
+6	Standardization
+6.1	Frameworks
+6.2	Design methodologies
+7	References
+8	Further reading
+9	External links
+Syntax
+CSS has a simple syntax and uses a number of English keywords to specify the names of various style properties.
+
+A style sheet consists of a list of rules. Each rule or rule-set consists of one or more selectors, and a declaration block.
+
+Selector
+In CSS, selectors declare which part of the markup a style applies to by matching tags and attributes in the markup itself.
+
+Selectors may apply to the following:
+
+all elements of a specific type, e.g. the second-level headers h2
+elements specified by attribute, in particular:
+id: an identifier unique within the document
+class: an identifier that can annotate multiple elements in a document
+elements depending on how they are placed relative to others in the document tree.
+Classes and IDs are case-sensitive, start with letters, and can include alphanumeric characters, hyphens and underscores. A class may apply to any number of instances of any elements. An ID may only be applied to a single element.
+
+Pseudo-classes are used in CSS selectors to permit formatting based on information that is not contained in the document tree. One example of a widely used pseudo-class is :hover, which identifies content only when the user "points to" the visible element, usually by holding the mouse cursor over it. It is appended to a selector as in a:hover or #elementid:hover. A pseudo-class classifies document elements, such as :link or :visited, whereas a pseudo-element makes a selection that may consist of partial elements, such as ::first-line or ::first-letter.[6]
+
+Selectors may be combined in many ways to achieve great specificity and flexibility.[7] Multiple selectors may be joined in a spaced list to specify elements by location, element type, id, class, or any combination thereof. The order of the selectors is important. For example, div .myClass {color: red;} applies to all elements of class myClass that are inside div elements, whereas .myClass div {color: red;} applies to all div elements that are in elements of class myClass.
+
+The following table provides a summary of selector syntax indicating usage and the version of CSS that introduced it.[8]
+
+Pattern	Matches	First defined
+in CSS level
+E	an element of type E	1
+E:link	an E element is the source anchor of a hyperlink of which the target is not yet visited (:link) or already visited (:visited)	1
+E:active	an E element during certain user actions	1
+E::first-line	the first formatted line of an E element	1
+E::first-letter	the first formatted letter of an E element	1
+.c	all elements with class="c"	1
+#myid	the element with id="myid"	1
+E.warning	an E element whose class is "warning" (the document language specifies how class is determined)	1
+E#myid	an E element with ID equal to "myid"	1
+.c#myid	the element with class="c" and ID equal to "myid"	1
+E F	an F element descendant of an E element	1
+*	any element	2
+E[foo]	an E element with a "foo" attribute	2
+E[foo="bar"]	an E element whose "foo" attribute value is exactly equal to "bar"	2
+E[foo~="bar"]	an E element whose "foo" attribute value is a list of whitespace-separated values, one of which is exactly equal to "bar"	2
+E[foo|="en"]	an E element whose "foo" attribute has a hyphen-separated list of values beginning (from the left) with "en"	2
+E:first-child	an E element, first child of its parent	2
+E:lang(fr)	an element of type E in language "fr" (the document language specifies how language is determined)	2
+E::before	generated content before an E element's content	2
+E::after	generated content after an E element's content	2
+E > F	an F element child of an E element	2
+E + F	an F element immediately preceded by an E element	2
+E[foo^="bar"]	an E element whose "foo" attribute value begins exactly with the string "bar"	3
+E[foo$="bar"]	an E element whose "foo" attribute value ends exactly with the string "bar"	3
+E[foo*="bar"]	an E element whose "foo" attribute value contains the substring "bar"	3
+E:root	an E element, root of the document	3
+E:nth-child(n)	an E element, the n-th child of its parent	3
+E:nth-last-child(n)	an E element, the n-th child of its parent, counting from the last one	3
+E:nth-of-type(n)	an E element, the n-th sibling of its type	3
+E:nth-last-of-type(n)	an E element, the n-th sibling of its type, counting from the last one	3
+E:last-child	an E element, last child of its parent	3
+E:first-of-type	an E element, first sibling of its type	3
+E:last-of-type	an E element, last sibling of its type	3
+E:only-child	an E element, only child of its parent	3
+E:only-of-type	an E element, only sibling of its type	3
+E:empty	an E element that has no children (including text nodes)	3
+E:target	an E element being the target of the referring URI	3
+E:enabled	a user interface element E that is enabled	3
+E:disabled	a user interface element E that is disabled	3
+E:checked	a user interface element E that is checked (for instance a radio-button or checkbox)	3
+E:not(s)	an E element that does not match simple selector s	3
+E ~ F	an F element preceded by an E element	3
+Declaration block
+A declaration block consists of a list of declarations in braces. Each declaration itself consists of a property, a colon (:), and a value. If there are multiple declarations in a block, a semi-colon (;) must be inserted to separate each declaration.[9]
+
+Properties are specified in the CSS standard. Each property has a set of possible values. Some properties can affect any type of element, and others apply only to particular groups of elements.[10][11]
+
+Values may be keywords, such as "center" or "inherit", or numerical values, such as 200px (200 pixels), 50vw (50 percent of the viewport width) or 80% (80 percent of the parent element's width). Color values can be specified with keywords (e.g. "red"), hexadecimal values (e.g. #FF0000, also abbreviated as #F00), RGB values on a 0 to 255 scale (e.g. rgb(255, 0, 0)), RGBA values that specify both color and alpha transparency (e.g. rgba(255, 0, 0, 0.8)), or HSL or HSLA values (e.g. hsl(000, 100%, 50%), hsla(000, 100%, 50%, 80%)).[12]
+
+Length units
+Non-zero numeric values representing linear measures must include a length unit, which is either an alphabetic code or abbreviation, as in 200px or 50vw; or a percentage sign, as in 80%. Some units – cm (centimetre); in (inch); mm (millimetre); pc (pica); and pt (point) – are absolute, which means that the rendered dimension does not depend upon the structure of the page; others – em (em); ex (ex) and px (pixel) – are relative, which means that factors such as the font size of a parent element can affect the rendered measurement. These eight units were a feature of CSS 1[13] and retained in all subsequent revisions. The proposed CSS Values and Units Module Level 3 will, if adopted as a W3C Recommendation, provide seven further length units: ch; Q; rem; vh; vmax; vmin; and vw.[14]
+
+Use
+Before CSS, nearly all presentational attributes of HTML documents were contained within the HTML markup. All font colors, background styles, element alignments, borders and sizes had to be explicitly described, often repeatedly, within the HTML. CSS lets authors move much of that information to another file, the style sheet, resulting in considerably simpler HTML.
+
+For example, headings (h1 elements), sub-headings (h2), sub-sub-headings (h3), etc., are defined structurally using HTML. In print and on the screen, choice of font, size, color and emphasis for these elements is presentational.
+
+Before CSS, document authors who wanted to assign such typographic characteristics to, say, all h2 headings had to repeat HTML presentational markup for each occurrence of that heading type. This made documents more complex, larger, and more error-prone and difficult to maintain. CSS allows the separation of presentation from structure. CSS can define color, font, text alignment, size, borders, spacing, layout and many other typographic characteristics, and can do so independently for on-screen and printed views. CSS also defines non-visual styles, such as reading speed and emphasis for aural text readers. The W3C has now deprecated the use of all presentational HTML markup.[15]
+
+For example, under pre-CSS HTML, a heading element defined with red text would be written as:
+
+<h1><font color="red">Chapter 1.</font></h1>
+Using CSS, the same element can be coded using style properties instead of HTML presentational attributes:
+
+<h1 style="color: red;">Chapter 1.</h1>
+The advantages of this may not be immediately clear but the power of CSS becomes more apparent when the style properties are placed in an internal style element or, even better, an external CSS file. For example, suppose the document contains the style element:
+
+<style>
+    h1 {
+        color: red;
+    }
+</style>
+All h1 elements in the document will then automatically become red without requiring any explicit code. If the author later wanted to make h1 elements blue instead, this could be done by changing the style element to:
+
+<style>
+    h1 {
+        color: blue;
+    }
+</style>
+rather than by laboriously going through the document and changing the color for each individual h1 element.
+
+The styles can also be placed in an external CSS file, as described below, and loaded using syntax similar to:
+
+<link href="path/to/file.css" rel="stylesheet" type="text/css">
+This further decouples the styling from the HTML document, and makes it possible to restyle multiple documents by simply editing a shared external CSS file.
+
+Sources
+CSS information can be provided from various sources. These sources can be the web browser, the user and the author. The information from the author can be further classified into inline, media type, importance, selector specificity, rule order, inheritance and property definition. CSS style information can be in a separate document or it can be embedded into an HTML document. Multiple style sheets can be imported. Different styles can be applied depending on the output device being used; for example, the screen version can be quite different from the printed version, so that authors can tailor the presentation appropriately for each medium.
+
+The style sheet with the highest priority controls the content display. Declarations not set in the highest priority source are passed on to a source of lower priority, such as the user agent style. The process is called cascading.
+
+One of the goals of CSS is to allow users greater control over presentation. Someone who finds red italic headings difficult to read may apply a different style sheet. Depending on the browser and the web site, a user may choose from various style sheets provided by the designers, or may remove all added styles and view the site using the browser's default styling, or may override just the red italic heading style without altering other attributes.
+
+CSS priority scheme (highest to lowest)
+Priority	CSS source type	Description
+1	Importance	The "!important" annotation overwrites the previous priority types
+2	Inline	A style applied to an HTML element via HTML "style" attribute
+3	Media Type	A property definition applies to all media types, unless a media specific CSS is defined
+4	User defined	Most browsers have the accessibility feature: a user defined CSS
+5	Selector specificity	A specific contextual selector (#heading p) overwrites generic definition
+6	Rule order	Last rule declaration has a higher priority
+7	Parent inheritance	If a property is not specified, it is inherited from a parent element
+8	CSS property definition in HTML document	CSS rule or CSS inline style overwrites a default browser value
+9	Browser default	The lowest priority: browser default value is determined by W3C initial value specifications
+Specificity
+Specificity refers to the relative weights of various rules.[16] It determines which styles apply to an element when more than one rule could apply. Based on specification, a simple selector (e.g. H1) has a specificity of 1, class selectors have a specificity of 1,0, and ID selectors a specificity of 1,0,0. Because the specificity values do not carry over as in the decimal system, commas are used to separate the "digits"[17] (a CSS rule having 11 elements and 11 classes would have a specificity of 11,11, not 121).
+
+Thus the following rules selectors result in the indicated specificity:
+
+Selectors	Specificity
+H1 {color: white;}	0, 0, 0, 1
+P EM {color: green;}	0, 0, 0, 2
+.grape {color: red;}	0, 0, 1, 0
+P.bright {color: blue;}	0, 0, 1, 1
+P.bright EM.dark {color: yellow;}	0, 0, 2, 2
+#id218 {color: brown;}	0, 1, 0, 0
+style=" "	1, 0, 0, 0
+Examples
+Consider this HTML fragment:
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            #xyz { color: blue; }
+        </style>
+    </head>
+    <body>
+        <p id="xyz" style="color: green;">To demonstrate specificity</p>
+    </body>
+</html>
+In the above example, the declaration in the style attribute overrides the one in the <style> element because it has a higher specificity, and thus, the paragraph appears green.
+
+Inheritance
+Inheritance is a key feature in CSS; it relies on the ancestor-descendant relationship to operate. Inheritance is the mechanism by which properties are applied not only to a specified element, but also to its descendants.[16] Inheritance relies on the document tree, which is the hierarchy of XHTML elements in a page based on nesting. Descendant elements may inherit CSS property values from any ancestor element enclosing them. In general, descendant elements inherit text-related properties, but their box-related properties are not inherited. Properties that can be inherited are color, font, letter-spacing, line-height, list-style, text-align, text-indent, text-transform, visibility, white-space and word-spacing. Properties that cannot be inherited are background, border, display, float and clear, height, and width, margin, min- and max-height and -width, outline, overflow, padding, position, text-decoration, vertical-align and z-index.
+
+Inheritance can be used to avoid declaring certain properties over and over again in a style sheet, allowing for shorter CSS.
+
+Inheritance in CSS is not the same as inheritance in class-based programming languages, where it is possible to define class B as "like class A, but with modifications".[18] With CSS, it is possible to style an element with "class A, but with modifications". However, it is not possible to define a CSS class B like that, which could then be used to style multiple elements without having to repeat the modifications.
+
+Example
+Given the following style sheet:
+
+h1 {
+   color: pink;
+}
+Suppose there is an h1 element with an emphasizing element (em) inside:
+
+<h1>
+   This is to <em>illustrate</em> inheritance
+</h1>
+If no color is assigned to the em element, the emphasized word "illustrate" inherits the color of the parent element, h1. The style sheet h1 has the color pink, hence, the em element is likewise pink.
+
+Whitespace
+Whitespace between properties and selectors is ignored. This code snippet:
+
+body{overflow:hidden;background:#000000;background-image:url(images/bg.gif);background-repeat:no-repeat;background-position:left top;}
+is functionally equivalent to this one:
+
+body {
+   overflow: hidden;
+   background-color: #000000;
+   background-image: url(images/bg.gif);
+   background-repeat: no-repeat;
+   background-position: left top;
+}
+One common way to format CSS for readability is to indent each property and give it its own line. In addition to formatting CSS for readability, shorthand properties can be used to write out the code faster, which also gets processed more quickly when being rendered:[19]
+
+body {
+   overflow: hidden;
+   background: #000 url(images/bg.gif) no-repeat left top;
+}
+Positioning
+CSS 2.1 defines three positioning schemes:
+
+Normal flow
+Inline items are laid out in the same way as the letters in words in text, one after the other across the available space until there is no more room, then starting a new line below. Block items stack vertically, like paragraphs and like the items in a bulleted list. Normal flow also includes relative positioning of block or inline items, and run-in boxes.
+Floats
+A floated item is taken out of the normal flow and shifted to the left or right as far as possible in the space available. Other content then flows alongside the floated item.
+Absolute positioning
+An absolutely positioned item has no place in, and no effect on, the normal flow of other items. It occupies its assigned position in its container independently of other items.[20]
+Position property
+There are four possible values of the position property. If an item is positioned in any way other than static, then the further properties top, bottom, left, and right are used to specify offsets and positions.
+
+Static
+The default value places the item in the normal flow
+Relative
+The item is placed in the normal flow, and then shifted or offset from that position. Subsequent flow items are laid out as if the item had not been moved.
+Absolute
+Specifies absolute positioning. The element is positioned in relation to its nearest non-static ancestor.
+Fixed
+The item is absolutely positioned in a fixed position on the screen even as the rest of the document is scrolled[20]
+Float and clear
+The float property may have one of three values. Absolutely positioned or fixed items cannot be floated. Other elements normally flow around floated items, unless they are prevented from doing so by their clear property.
+
+left
+The item floats to the left of the line that it would have appeared in; other items may flow around its right side.
+right
+The item floats to the right of the line that it would have appeared in; other items may flow around its left side.
+clear
+Forces the element to appear underneath ('clear') floated elements to the left (clear:left), right (clear:right) or both sides (clear:both).[20][21]
+History
+
+Håkon Wium Lie, chief technical officer of the Opera Software company and co-creator of the CSS web standards
+CSS was first proposed by Håkon Wium Lie on October 10, 1994.[22] At the time, Lie was working with Tim Berners-Lee at CERN.[23] Several other style sheet languages for the web were proposed around the same time, and discussions on public mailing lists and inside World Wide Web Consortium resulted in the first W3C CSS Recommendation (CSS1)[24] being released in 1996. In particular, a proposal by Bert Bos was influential; he became co-author of CSS1, and is regarded as co-creator of CSS.[25]
+
+Style sheets have existed in one form or another since the beginnings of Standard Generalized Markup Language (SGML) in the 1980s, and CSS was developed to provide style sheets for the web.[26] One requirement for a web style sheet language was for style sheets to come from different sources on the web. Therefore, existing style sheet languages like DSSSL and FOSI were not suitable. CSS, on the other hand, let a document's style be influenced by multiple style sheets by way of "cascading" styles.[26]
+
+As HTML grew, it came to encompass a wider variety of stylistic capabilities to meet the demands of web developers. This evolution gave the designer more control over site appearance, at the cost of more complex HTML. Variations in web browser implementations, such as ViolaWWW and WorldWideWeb,[27] made consistent site appearance difficult, and users had less control over how web content was displayed. The browser/editor developed by Tim Berners-Lee had style sheets that were hard-coded into the program. The style sheets could therefore not be linked to documents on the web.[23] Robert Cailliau, also of CERN, wanted to separate the structure from the presentation so that different style sheets could describe different presentation for printing, screen-based presentations, and editors.[27]
+
+Improving web presentation capabilities was a topic of interest to many in the web community and nine different style sheet languages were proposed on the www-style mailing list.[26] Of these nine proposals, two were especially influential on what became CSS: Cascading HTML Style Sheets[22] and Stream-based Style Sheet Proposal (SSP).[25][28] Two browsers served as testbeds for the initial proposals; Lie worked with Yves Lafon to implement CSS in Dave Raggett's Arena browser.[29][30][31] Bert Bos implemented his own SSP proposal in the Argo browser.[25] Thereafter, Lie and Bos worked together to develop the CSS standard (the 'H' was removed from the name because these style sheets could also be applied to other markup languages besides HTML).[23]
+
+Lie's proposal was presented at the "Mosaic and the Web" conference (later called WWW2) in Chicago, Illinois in 1994, and again with Bert Bos in 1995.[23] Around this time the W3C was already being established, and took an interest in the development of CSS. It organized a workshop toward that end chaired by Steven Pemberton. This resulted in W3C adding work on CSS to the deliverables of the HTML editorial review board (ERB). Lie and Bos were the primary technical staff on this aspect of the project, with additional members, including Thomas Reardon of Microsoft, participating as well. In August 1996, Netscape Communication Corporation presented an alternative style sheet language called JavaScript Style Sheets (JSSS).[23] The spec was never finished, and is deprecated.[32] By the end of 1996, CSS was ready to become official, and the CSS level 1 Recommendation was published in December.
+
+Development of HTML, CSS, and the DOM had all been taking place in one group, the HTML Editorial Review Board (ERB). Early in 1997, the ERB was split into three working groups: HTML Working group, chaired by Dan Connolly of W3C; DOM Working group, chaired by Lauren Wood of SoftQuad; and CSS Working group, chaired by Chris Lilley of W3C.
+
+The CSS Working Group began tackling issues that had not been addressed with CSS level 1, resulting in the creation of CSS level 2 on November 4, 1997. It was published as a W3C Recommendation on May 12, 1998. CSS level 3, which was started in 1998, is still under development as of 2014.
+
+In 2005, the CSS Working Groups decided to enforce the requirements for standards more strictly. This meant that already published standards like CSS 2.1, CSS 3 Selectors, and CSS 3 Text were pulled back from Candidate Recommendation to Working Draft level.</p2>
+
+</html>
